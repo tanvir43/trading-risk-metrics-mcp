@@ -1,0 +1,18 @@
+version: 1
+name: trading-risk-metrics-mcp
+description: >-
+  Portfolio risk & performance from your CSV/JSON exports — VaR/ES, Sharpe/Sortino,
+  drawdowns, concentration, and Markdown tear sheets. No external APIs.
+runtime: typescript
+entry: src/index.ts
+
+build:
+  install: npm ci
+  command: npm run build
+
+startCommand:
+  type: http
+  command: node dist/index.js
+
+configSchema:
+  source: code
